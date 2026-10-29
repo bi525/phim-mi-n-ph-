@@ -1,0 +1,30 @@
+# Traffic captures / debug dumps (không cần cho triển khai)
+*.mitm
+traffic.mitm
+
+# Logs & runtime
+*.log
+npm-debug.log*
+
+# Node
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Env / secrets (KHÔNG commit token, biến môi trường thật)
+.env
+.env.*
+data/
+
+# SDD scratch (ledger, briefs, review packages)
+.superpowers/
+
+dist/
+test-results/
+playwright-report/
+.fixtures-data/
+.e2e-data/

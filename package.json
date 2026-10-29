@@ -1,0 +1,46 @@
+{
+  "name": "filmmoi",
+  "version": "4.2.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev:server": "FILMMOI_PORT=8790 tsx watch server/index.ts",
+    "dev:client": "vite --config client/vite.config.ts",
+    "build:server": "tsc -p server",
+    "build:client": "vite build --config client/vite.config.ts",
+    "build": "npm run build:server && npm run build:client",
+    "start": "node dist/server/index.js",
+    "start:fixtures": "FILMMOI_FIXTURES=1 FILMMOI_PORT=8791 FILMMOI_DATA_DIR=.fixtures-data node dist/server/index.js",
+    "check": "tsc -p server --noEmit",
+    "check:client": "svelte-check --tsconfig client/tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "npm run build && playwright test"
+  },
+  "dependencies": {
+    "@fontsource/outfit": "^5.3.0",
+    "@hono/node-server": "^2.1.1",
+    "dompurify": "^3.4.14",
+    "hls.js": "^1.7.2",
+    "hono": "^4.13.5",
+    "plyr": "^3.8.4",
+    "qrcode": "^1.5.4",
+    "svelte": "^5.57.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "@types/dompurify": "^3.0.5",
+    "@types/node": "^24.13.3",
+    "@types/qrcode": "^1.5.6",
+    "jsdom": "^27.4.0",
+    "svelte-check": "^4.7.6",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11"
+  }
+}
